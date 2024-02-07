@@ -29,6 +29,14 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
+
+        addUser: async (parent, args) => {
+            const user = await User.create(args);
+            const token = signToken(user);
+      
+            return { token, user };
+          },
+
         saveBook: async (parent, { bookData }, context) => {
             if (context.user) {
                 const savedBook = await User.findByIdAndUpdate(
@@ -42,6 +50,7 @@ const resolvers = {
 
             throw AuthenticationError;
         },
+        
         removeBook: async (parent, { bookId }, context) => {
             if (context.user) {
                 const updatedUser = await User.findOneAndUpdate(
