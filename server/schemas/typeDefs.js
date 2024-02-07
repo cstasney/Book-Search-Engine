@@ -1,7 +1,7 @@
 const typeDefs= `
     type User {
         _id: ID!
-        username: String!
+        username: String
         email: String
         bookCount: Int
         savedBooks: [Book]
@@ -13,21 +13,21 @@ const typeDefs= `
         description: String
         image: String
         link: String
-        title: String!
+        title: String
     }
     
     type Auth {
         token: ID!
         user: User
       }
-      
+
       input BookInput {
         authors: [String]
-        description: String!
+        description: String
         bookId: String!
         image: String
         link: String
-        title: String!
+        title: String
       }
     
       type Query {
