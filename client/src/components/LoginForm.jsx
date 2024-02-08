@@ -33,6 +33,8 @@ const LoginForm = () => {
         variables: { ...userFormData }
       });
 
+      console.log(...userFormData)
+
       Auth.login(data.login.token);
     } catch (err) {
       console.error(err);
@@ -40,7 +42,6 @@ const LoginForm = () => {
     }
 
     setUserFormData({
-      username: '',
       email: '',
       password: '',
     });
