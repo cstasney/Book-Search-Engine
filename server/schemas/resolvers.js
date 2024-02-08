@@ -5,7 +5,8 @@ const resolvers = {
     Query: {
         me: async (parents, args, context) => {
             if (context.user) {
-                const userData = await User.findOne({ _id: context.user.id })
+                const userData = await User.findOne({ _id: context.user._id })
+                console.log(context.user)
                 return userData;
             }
             throw AuthenticationError;
