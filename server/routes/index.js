@@ -3,6 +3,7 @@ const path = require('path');
 const apiRoutes = require('./api');
 
 router.use('/api', apiRoutes);
+console.log('1')
 
 // serve up react front-end in production
 router.use((req, res) => {
